@@ -13,7 +13,7 @@ player.on('play', function() {
 function updateTime() {
   player.getCurrentTime()
     .then(function(currentTime) {
-      localStorage.setItem('videoplayer-current-time', currentTime);
+      localStorage.setItem('videoplayer-current-time', Math.floor(currentTime));
     })
     .catch(function(error) {
       console.log('Помилка отримання поточного часу відтворення:', error);
