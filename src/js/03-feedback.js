@@ -19,12 +19,11 @@ const loadFormState = () => {
     emailInput.value = formState.email;
     messageTextarea.value = formState.message;
   } else {
-    emailInput.value = ''; // Поля будуть порожніми, якщо в сховищі немає збережених даних
+    emailInput.value = ''; 
     messageTextarea.value = '';
   }
 };
 
-// Викликаємо функцію безпосередньо, без події DOMContentLoaded
 loadFormState();
 
 form.addEventListener('input', () => {
