@@ -18,8 +18,14 @@ const loadFormState = () => {
     const formState = JSON.parse(savedState);
     emailInput.value = formState.email;
     messageTextarea.value = formState.message;
+  } else {
+    emailInput.value = ''; // Поля будуть порожніми, якщо в сховищі немає збережених даних
+    messageTextarea.value = '';
   }
 };
+
+// Викликаємо функцію безпосередньо, без події DOMContentLoaded
+loadFormState();
 
 form.addEventListener('input', () => {
   saveFormState();
@@ -36,4 +42,3 @@ form.addEventListener('submit', (event) => {
   emailInput.value = '';
   messageTextarea.value = '';
 });
-
