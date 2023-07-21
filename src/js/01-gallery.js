@@ -20,19 +20,10 @@ const listTemplate = imagesListArr.join('');
 galleryList.insertAdjacentHTML('beforeend', listTemplate);
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  captions: (el) => el.dataset.alt,
-});
+  captionsData: "alt", 
+  captionDelay: 250, 
 
-galleryList.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (event.target.nodeName !== 'IMG') {
-    return;
-  }
 
-  const largeImageUrl = event.target.dataset.source;
-  lightbox.open({ content: `<img src="${largeImageUrl}" alt="${event.target.alt}">` });
 });
 
 
-
-console.log(galleryItems);
